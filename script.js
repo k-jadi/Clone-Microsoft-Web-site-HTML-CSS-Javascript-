@@ -1,3 +1,55 @@
+function resize() {
+    let products = document.querySelectorAll('.showCase');
+    let heightWindow = window.innerWidth;
+
+    products.forEach(element => {
+        if (heightWindow>1083) {
+        element.style.height = heightWindow/3 +'px';
+        } else {
+            element.style.height = heightWindow/2 +'px';
+        }
+    }
+    )
+}
+window.onresize = resize;
+//**************************************************************
+ const subMenu = document.querySelectorAll('.subMenu');
+ const listSubMenu = document.querySelectorAll('.listSubMenu');
+ const chevron = document.querySelectorAll('.chevron');
+ for(let i=0; i<subMenu.length;i++){
+     subMenu[i].addEventListener('click', ()=> {
+     listSubMenu[i].classList.toggle("listSubMenu2");
+    chevron[i].classList.toggle('fa-chevron-up');
+});
+}
+//**************************************************************
+
+const slideMenu_mobile = document.querySelector('.slideMenu_mobile');
+const close = document.getElementById('close');
+const open = document.getElementById('open');
+
+open.addEventListener('click', () => {
+    slideMenu_mobile.style.maxHeight = '1000px';
+    open.style.display='none';
+    close.style.width='40px';
+    close.style.height='40px';
+    close.style.lineHeight='40px';
+    close.innerHTML ='X';
+    close.style.fontSize='2rem';
+    close.style.textAlign ='center';
+})
+close.addEventListener('click', () => {
+    slideMenu_mobile.style.maxHeight = '0';
+    close.innerHTML ='';
+    close.style.width ='';
+    open.style.display='inline';
+    for(let i=0; i<subMenu.length;i++){
+        listSubMenu[i].className = "listSubMenu";
+        chevron[i].className = ' fas fa-chevron-down';
+    };
+})
+
+//**************************************************************
 let x = document.getElementById('pointSlideMenu');
 let y = document.querySelector('.slideMenu');
 

@@ -18,7 +18,45 @@ a:hover {
 header {
     width: 90%;
     margin: auto;
-    padding: 5px 5px;
+    padding: 0px 5px;
+}
+.navigation_mobile {
+    display: none;
+}
+.slideMenu_mobile {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    background-color: rgb(237, 237, 245);
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.slideMenu_mobile ul {
+    list-style: none;
+
+}
+.slideMenu_mobile ul li {
+    padding: 10px 15px;
+    border-bottom: 1.5px solid rgba(221, 196, 196, 0.164);
+    
+}   
+.slideMenu_mobile ul li:first-child {
+    border-top: 1.5px solid rgba(221, 196, 196, 0.164);
+    
+} 
+.subMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.listSubMenu {
+    max-height: 0;
+    overflow: hidden;
+}
+.listSubMenu2 {
+    margin-top: 10px;
+    max-height: 500px;
 }
 .navigation {
     display: flex;
@@ -99,14 +137,14 @@ i {
     height: 450px;
     padding: 75px;
     margin: auto;
-    background: #e8e8e8 url(images/background-image-microsoft.png) no-repeat right center;
+    background: #e8e8e8 url(images/background-image-microsoft.png) no-repeat right center/55% 95%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
 .showCase p {
-    max-width: 40%;
+    max-width: 55%;
     margin: 15px 0px;
 }
 .btn {
@@ -155,6 +193,7 @@ i {
 }
 .products div img {
     margin-bottom: 25px;
+    width: 100%;
 }
 .products div img:hover {
     opacity: 0.9;
@@ -184,16 +223,7 @@ i {
 
 /* Section 3 */
 .section3 {
-    width: 90%;
-    height: 450px;
-    margin: auto;
-    padding-left: 55px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    row-gap: 20px;
-    background: #e8e8e8 url(images/bgsection2.PNG) no-repeat right center;
+    background: #e8e8e8 url(images/bgsection2.PNG) no-repeat right center/55% 95%;
 }
 .btnSection3 {
     width: 250px;
@@ -268,4 +298,110 @@ i {
     font-size: 0.7rem;
     color: gray;
     margin-left: 20px;
+}
+
+@media(max-width:1083px) {
+    header {
+        width: 95%;
+    }
+    .navigation_mobile div {
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+    }
+    .showCase {
+        width: 100%;
+        margin: 0;
+        background: #e8e8e8 url(images/background-image-microsoft.png) no-repeat right center/55% 75%;
+        padding: 30px;
+
+    }
+    .section3 {
+        background: #e8e8e8 url(images/bgsection2.PNG) no-repeat 120% bottom/55% 85%;
+    }
+    .showCase p {
+        max-width: 45%;
+    }
+    .products {
+        flex-wrap: wrap;
+        row-gap: 45px;
+    }    
+    .products div  {
+        width: 48%;
+    }
+    .btnBis {
+        display: block;
+    }
+    .slideMenu {
+        left: 0;
+        width: 100%;
+    }
+    .section7Container {
+        flex-wrap: wrap;
+        row-gap: 55px;
+    }
+    .section7Container ul {
+        width: 30%;
+    }
+    .section7Footer ul {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+}
+@media (max-width:768px) {
+    header {
+        width: 100%;
+    }
+    .navigation {
+        display: none;
+    }
+    .navigation_mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #search_ipad, #shopping_cart_ipad, #account_circle_ipad {
+        font-size: 24px;
+        margin-left: 5px;
+    }
+}
+@media (max-width:375px) {
+    .showCase {
+        width: 100%;
+        height: 65vh;
+        margin: 0px 0px 45px 0px;
+        align-items: center;
+        justify-content: flex-end;
+        background: #e8e8e8 url(images/background-image-microsoft.png) no-repeat right -20%/100% 50%;
+        padding: 30px;
+
+    }
+    .showCase h1 {
+        font-size: 1em;
+    }
+    .showCase p {
+        margin-top: 5px;
+        max-width: 100%;
+        text-align: center;
+    }
+    .btnBis {
+        padding-left: 30px;
+    }
+    .products div  {
+        width: 100%;
+    }
+    .section3 {
+        padding-bottom: 100px;
+        background: #e8e8e8 url(images/bgsection2.PNG) no-repeat center top/75% 40%;
+    }
+    .section7Container ul {
+        width: 100%;
+    }
+    .section7Footer {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+   
+
 }
